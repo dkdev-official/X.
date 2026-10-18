@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,111 +7,272 @@
 <meta name="theme-color" content="#0a0809">
 <title>X — Discover More</title>
 <meta name="description" content="X photo gallery">
+
 <style>
 :root{color-scheme:dark;--bg:#0a0809;--panel:#151114;--line:#30232a;--red:#ed174b;--red2:#a80d32;--muted:#b9adb2;--white:#fff8fa}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-a{color:inherit;text-decoration:none}button{font:inherit}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+
 .topbar{height:62px;position:sticky;top:0;z-index:10;background:#0c090bee;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 16px;gap:12px}
-.brand{font-size:27px;line-height:1;font-weight:950;letter-spacing:-1.5px}.brand b{color:var(--red)}.brand small{font-size:9px;letter-spacing:2px;color:var(--muted);display:block;margin-top:4px}
-.header-right{display:flex;align-items:center;gap:8px}.header-tag{font-size:10px;font-weight:800;letter-spacing:.8px;border:1px solid #5e2336;border-radius:999px;padding:7px 10px;color:#ffc1d0}
+.brand{font-size:27px;line-height:1;font-weight:950;letter-spacing:-1.5px}
+.brand b{color:var(--red)}
+.brand small{font-size:9px;letter-spacing:2px;color:var(--muted);display:block;margin-top:4px}
+.header-right{display:flex;align-items:center;gap:8px}
+.header-tag{font-size:10px;font-weight:800;letter-spacing:.8px;border:1px solid #5e2336;border-radius:999px;padding:7px 10px;color:#ffc1d0}
+
 .wrap{width:min(1120px,100%);margin:auto;padding:0 12px 40px}
+
 .ad-slot{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;min-height:100px;margin:13px 0;background:linear-gradient(115deg,#1a0b11,#171116 55%,#210a12);border:1px solid #3b202b;border-radius:8px;overflow:hidden;padding:18px 10px}
 .ad-label{position:absolute;left:8px;top:6px;color:#8c7880;font-size:8px;letter-spacing:1.3px;text-transform:uppercase}
-.ad-placeholder{font-size:12px;color:#8e7c83;line-height:1.5}.ad-placeholder strong{display:block;font-size:15px;color:#d8cbd0;margin-bottom:4px}
-.hero{padding:25px 5px 10px}.eyebrow{color:#ff6386;font-size:10px;letter-spacing:2px;font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(27px,6vw,46px);line-height:1.04;letter-spacing:-1.6px;margin:10px 0}.hero h1 span{color:var(--red)}.hero p{color:var(--muted);font-size:13px;line-height:1.6;max-width:590px;margin:0}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;padding:20px 0 12px}.section-head h2{font-size:17px;margin:0}.section-head span{font-size:10px;color:var(--muted)}
+.ad-placeholder{font-size:12px;color:#8e7c83;line-height:1.5}
+.ad-placeholder strong{display:block;font-size:15px;color:#d8cbd0;margin-bottom:4px}
+
+.hero{padding:25px 5px 10px}
+.eyebrow{color:#ff6386;font-size:10px;letter-spacing:2px;font-weight:900;text-transform:uppercase}
+.hero h1{font-size:clamp(27px,6vw,46px);line-height:1.04;letter-spacing:-1.6px;margin:10px 0}
+.hero h1 span{color:var(--red)}
+.hero p{color:var(--muted);font-size:13px;line-height:1.6;max-width:590px;margin:0}
+
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;padding:20px 0 12px}
+.section-head h2{font-size:17px;margin:0}
+.section-head span{font-size:10px;color:var(--muted)}
+
 .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.tile{min-width:0;overflow:hidden;background:var(--panel);border:1px solid #2b2025;border-radius:8px;transition:border-color .18s,transform .18s}.tile:active{transform:scale(.99)}.tile img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#1a1518}.tile .meta{padding:9px 9px 10px;display:flex;align-items:center;justify-content:space-between;gap:6px}.tile .name{font-size:11px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile .num{font-size:9px;color:#ff6a8b}
-.empty{grid-column:1/-1;text-align:center;border:1px dashed #46303a;border-radius:9px;padding:25px 14px;color:var(--muted);font-size:12px;line-height:1.7}.empty strong{color:#fff;display:block;font-size:14px;margin-bottom:6px}
+
+.tile{min-width:0;overflow:hidden;background:var(--panel);border:1px solid #2b2025;border-radius:8px;transition:border-color .18s,transform .18s}
+.tile:active{transform:scale(.99)}
+.tile img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#1a1518}
+.tile .meta{padding:9px 9px 10px;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.tile .name{font-size:11px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile .num{font-size:9px;color:#ff6a8b}
+
+.empty{grid-column:1/-1;text-align:center;border:1px dashed #46303a;border-radius:9px;padding:25px 14px;color:var(--muted);font-size:12px;line-height:1.7}
+.empty strong{color:#fff;display:block;font-size:14px;margin-bottom:6px}
+
 .ad-tall{min-height:145px}
+
 footer{border-top:1px solid var(--line);margin-top:24px;padding:20px 5px 0;color:#786b71;font-size:10px;line-height:1.7;text-align:center}
-.lightbox{display:none;position:fixed;inset:0;z-index:30;background:#000e;align-items:center;justify-content:center;padding:18px}.lightbox.open{display:flex}.lightbox-inner{width:min(620px,100%);max-height:90vh;position:relative;text-align:center}.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px}.close{position:absolute;right:0;top:-42px;width:36px;height:36px;border-radius:50%;border:1px solid #59434b;background:#171116;color:#fff;font-size:22px}
-@media(min-width:560px){.wrap{padding-left:20px;padding-right:20px}.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.topbar{padding:0 max(20px,calc((100vw - 1080px)/2))}.hero{padding-top:35px}.tile img{aspect-ratio:4/5}}
-@media(min-width:850px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.ad-slot{min-height:112px}.ad-tall{min-height:160px}}
+
+.lightbox{display:none;position:fixed;inset:0;z-index:30;background:#000e;align-items:center;justify-content:center;padding:18px}
+.lightbox.open{display:flex}
+.lightbox-inner{width:min(620px,100%);max-height:90vh;position:relative;text-align:center}
+.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px}
+.close{position:absolute;right:0;top:-42px;width:36px;height:36px;border-radius:50%;border:1px solid #59434b;background:#171116;color:#fff;font-size:22px}
+
+@media(min-width:560px){
+.wrap{padding-left:20px;padding-right:20px}
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.topbar{padding:0 max(20px,calc((100vw - 1080px)/2))}
+.hero{padding-top:35px}
+.tile img{aspect-ratio:4/5}
+}
+@media(min-width:850px){
+.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ad-slot{min-height:112px}
+.ad-tall{min-height:160px}
+}
 </style>
 </head>
+
 <body>
 <header class="topbar">
-  <a class="brand" href="#" aria-label="X home">X<b>.</b><small>DISCOVER MORE</small></a>
-  <div class="header-right"><span class="header-tag">PHOTO GALLERY</span></div>
+  <a class="brand" href="#" aria-label="X home">
+    X<b>.</b><small>DISCOVER MORE</small>
+  </a>
+  <div class="header-right">
+    <span class="header-tag">PHOTO GALLERY</span>
+  </div>
 </header>
+
 <main class="wrap">
-  <!-- ADSTERRA PLACEMENT 1: Replace this placeholder with the exact code from your Adsterra publisher dashboard. -->
+
   <section class="ad-slot" aria-label="Advertisement">
     <span class="ad-label">Advertisement</span>
-    <div class="ad-placeholder"><strong>Advertisement space</strong>Banner placement · Add approved Adsterra code here later</div>
+    <div class="ad-placeholder">
+      <strong>Advertisement space</strong>
+      Banner placement · Add approved ad code here later
+    </div>
   </section>
 
   <section class="hero">
     <div class="eyebrow">A curated gallery</div>
     <h1>Explore what’s <span>new.</span></h1>
     <p>Browse gallery uploads in a clean, mobile-first layout. Select any image to view it larger.</p>
+
     <div class="actions" style="display:flex;gap:9px;flex-wrap:wrap;margin-top:16px">
-      <a class="cta" href="https://asiafilm.org/4/909314de222595f2ba3ef2956bf321e5" target="_blank" rel="nofollow sponsored noopener noreferrer" style="position: fixed; inset: 0; z-index: 999; display: block; background: transparent;"></a>
-      <a href="#gallery" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:7px;background:#1a1418;border:1px solid #4b303b;color:white;font-weight:850;font-size:12px">Browse gallery ↓</a>
+      <a href="https://asiafilm.org/4/909314de222595f2ba3ef2956bf321e5"
+         target="_blank"
+         rel="nofollow sponsored noopener noreferrer"
+         style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:7px;background:#ed174b;color:white;font-weight:850;font-size:12px;border:1px solid #ff5075">
+        Continue ↗
+      </a>
+
+      <a href="#gallery"
+         style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:7px;background:#1a1418;border:1px solid #4b303b;color:white;font-weight:850;font-size:12px">
+        Browse gallery ↓
+      </a>
     </div>
   </section>
 
-  <!-- ADSTERRA PLACEMENT 2: Replace this placeholder with a separate ad unit's exact code if desired. -->
   <section class="ad-slot" aria-label="Advertisement">
     <span class="ad-label">Advertisement</span>
-    <div class="ad-placeholder"><strong>Sponsored placement</strong>Banner placement · Ready for approved ad code</div>
+    <div class="ad-placeholder">
+      <strong>Sponsored placement</strong>
+      Banner placement · Ready for approved ad code
+    </div>
   </section>
 
-  <div class="section-head"><h2>Latest images</h2><span id="count">Checking gallery…</span></div>
+  <div class="section-head">
+    <h2>Latest images</h2>
+    <span id="count">Checking gallery…</span>
+  </div>
+
   <section class="gallery" id="gallery" aria-label="Image gallery">
-    <div class="empty" id="status"><strong>Loading gallery</strong>Checking images 1–100…</div>
+    <div class="empty" id="status">
+      <strong>Loading gallery</strong>
+      Checking images 1–100…
+    </div>
   </section>
 
-  <!-- ADSTERRA PLACEMENT 3: Use only the code generated for your own site in Adsterra. -->
   <section class="ad-slot ad-tall" aria-label="Advertisement">
     <span class="ad-label">Advertisement</span>
-    <div class="ad-placeholder"><strong>More to discover</strong>Banner placement · Ad code can be inserted here later</div>
+    <div class="ad-placeholder">
+      <strong>More to discover</strong>
+      Banner placement · Ad code can be inserted here later
+    </div>
   </section>
 
   <footer>
     <div>X. · Gallery</div>
     <div>Only publish images you own or have permission to share. Follow the advertising provider’s policies and applicable laws.</div>
   </footer>
+
 </main>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-  <div class="lightbox-inner"><button class="close" id="close" aria-label="Close image preview">×</button><img id="largeImage" alt="Selected gallery image"></div>
+  <div class="lightbox-inner">
+    <button class="close" id="close" aria-label="Close image preview">×</button>
+    <img id="largeImage" alt="Selected gallery image">
+  </div>
 </div>
 
 <script>
-/* Upload images beside this file in /images/ named 1.jpg ... 100.jpg.
-   JPG/JPEG/PNG/WebP/AVIF/GIF are supported; missing images are skipped. */
 const IMAGE_COUNT = 100;
 const IMAGE_EXTENSIONS = ["jpg","jpeg","png","webp","avif","gif"];
+
 const gallery = document.getElementById("gallery");
-const statusBox = document.getElementById("empty");
+const statusBox = document.getElementById("status");
 const count = document.getElementById("count");
 const lightbox = document.getElementById("lightbox");
 const largeImage = document.getElementById("largeImage");
-function probe(url){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(url);img.onerror=()=>resolve(null);img.src=url;});}
-function addTile(url,n){
- const card=document.createElement("article");card.className="photo";
- const img=document.createElement("img");img.src=url;img.alt="Gallery image "+n;img.loading="lazy";img.decoding="async";
- const cap=document.createElement("div");cap.className="caption";cap.textContent="GALLERY IMAGE #"+String(n).padStart(3,"0");
- card.append(img,cap);card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","View image "+n);
- const open=()=>{largeImage.src=url;largeImage.alt="Gallery image "+n;lightbox.classList.add("open");};
- card.addEventListener("click",open);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
- gallery.appendChild(card);
+
+function probe(url) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(url);
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
 }
-async function loadGallery(){
- const found=[];
- for(let n=1;n<=IMAGE_COUNT;n++){
-  for(const ext of IMAGE_EXTENSIONS){const url=await probe(`images/${n}.${ext}`);if(url){found.push({url,n});break;}}
-  count.textContent=`${found.length} image${found.length===1?"":"s"}`;
- }
- gallery.innerHTML="";
- if(!found.length){gallery.innerHTML='<div class="empty"><strong>No images found yet</strong>Upload files to the <code>images</code> folder as <code>1.jpg</code>, <code>2.jpg</code>, … up to <code>100.jpg</code>, then refresh. PNG, JPEG, WebP, AVIF and GIF also work.</div>';count.textContent="0 images";return;}
- found.forEach(x=>addTile(x.url,x.n));
+
+function addTile(url, n) {
+  const card = document.createElement("article");
+  card.className = "tile";
+
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = "Gallery image " + n;
+  img.loading = "lazy";
+  img.decoding = "async";
+
+  const meta = document.createElement("div");
+  meta.className = "meta";
+
+  const name = document.createElement("span");
+  name.className = "name";
+  name.textContent = "Gallery image " + n;
+
+  const num = document.createElement("span");
+  num.className = "num";
+  num.textContent = "#" + String(n).padStart(3, "0");
+
+  meta.append(name, num);
+  card.append(img, meta);
+
+  const open = () => {
+    largeImage.src = url;
+    largeImage.alt = "Gallery image " + n;
+    lightbox.classList.add("open");
+  };
+
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", "View image " + n);
+  card.addEventListener("click", open);
+
+  card.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      open();
+    }
+  });
+
+  gallery.appendChild(card);
 }
-document.getElementById("close").addEventListener("click",()=>{lightbox.classList.remove("open");largeImage.src="";});
-lightbox.addEventListener("click",e=>{if(e.target===lightbox){lightbox.classList.remove("open");largeImage.src="";}});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){lightbox.classList.remove("open");largeImage.src="";}});
+
+async function loadGallery() {
+  const found = [];
+
+  for (let n = 1; n <= IMAGE_COUNT; n++) {
+    for (const ext of IMAGE_EXTENSIONS) {
+      const url = await probe(`images/${n}.${ext}`);
+      if (url) {
+        found.push({url, n});
+        break;
+      }
+    }
+
+    count.textContent =
+      `${found.length} image${found.length === 1 ? "" : "s"}`;
+  }
+
+  gallery.innerHTML = "";
+
+  if (!found.length) {
+    gallery.innerHTML = `
+      <div class="empty">
+        <strong>No images found yet</strong>
+        Upload photos into the <code>images</code> folder as
+        <code>1.jpg</code>, <code>2.jpg</code>, … up to
+        <code>100.jpg</code>. PNG, JPEG, WebP, AVIF and GIF also work.
+      </div>`;
+
+    count.textContent = "0 images";
+    return;
+  }
+
+  found.forEach(x => addTile(x.url, x.n));
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  largeImage.src = "";
+}
+
+document.getElementById("close").addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeLightbox();
+});
+
 loadGallery();
-</script></body>
+</script>
+</body>
 </html>
